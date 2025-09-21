@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>JavaScript DOM Powers Demo</title>
+  <style>
+    #container { margin-top: 10px; padding: 10px; border: 1px solid #ccc; }
+    button { margin: 5px; padding: 5px 10px; }
+  </style>
+</head>
+<body>
+  <h2>JavaScript DOM Manipulation Demo</h2>
+
+  <!-- 1. Change HTML elements -->
+  <p id="demo">Hello</p>
+  <button onclick="changeText()">Change Text</button>
+
+  <!-- 2. Change attributes -->
+  <img id="myImg" src="https://via.placeholder.com/100" alt="placeholder">
+  <button onclick="changeImage()">Change Image</button>
+
+  <!-- 3. Change CSS styles -->
+  <p id="styleText">Change my colour</p>
+  <button onclick="changeStyle()">Change Colour</button>
+
+  <!-- 4. Remove elements -->
+  <p id="removeMe">I will disappear when you click the button</p>
+  <button onclick="removeElement()">Remove Text</button>
+
+  <!-- 5. Add new elements -->
+  <div id="container"></div>
+  <button onclick="addElement()">Add New Paragraph</button>
+
+  <!-- 6. React to events -->
+  <button id="eventBtn">Click Me</button>
+
+  <!-- 7. Create new events -->
+  <button id="customBtn">Trigger Custom Event</button>
+
+  <script>
+    // 1. Change HTML elements
+    function changeText() {
+      document.getElementById("demo").innerHTML = "Hello World!";
+    }
+
+    // 2. Change attributes
+    function changeImage() {
+      document.getElementById("myImg").src = "https://via.placeholder.com/150";
+    }
+
+    // 3. Change CSS styles
+    function changeStyle() {
+      document.getElementById("styleText").style.color = "red";
+    }
+
+    // 4. Remove element
+    function removeElement() {
+      document.getElementById("removeMe").remove();
+    }
+
+    // 5. Add new element
+    function addElement() {
+      let newPara = document.createElement("p");
+      newPara.innerHTML = "I am new here!";
+      document.getElementById("container").appendChild(newPara);
+    }
+
+    // 6. React to existing events
+    document.getElementById("eventBtn").onclick = function() {
+      alert("Button was clicked!");
+    };
+
+    // 7. Create and dispatch custom event
+    let customBtn = document.getElementById("customBtn");
+    let myEvent = new Event("myCustom");
+
+    customBtn.addEventListener("myCustom", function() {
+      alert("My custom event fired!");
+    });
+
+    customBtn.onclick = function() {
+      customBtn.dispatchEvent(myEvent);
+    };
+  </script>
+</body>
+</html>

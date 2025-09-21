@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beginner Data Validation</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Simple Form Validation for Beginners</h1>
+        
+        <div class="info">
+            <strong>What we're learning:</strong> Basic form validation using JavaScript to check if users enter correct information.
+        </div>
+        
+        <form id="myForm">
+            <!-- Name field -->
+            <div class="form-group">
+                <label for="name">Your Name (Required):</label>
+                <input type="text" id="name" placeholder="Enter your full name">
+                <div id="nameError" class="error">Please enter your name</div>
+            </div>
+            
+            <!-- Email field -->
+            <div class="form-group">
+                <label for="email">Email Address (Required):</label>
+                <input type="email" id="email" placeholder="example@email.com">
+                <div id="emailError" class="error">Please enter a valid email</div>
+            </div>
+            
+            <!-- Age field -->
+            <div class="form-group">
+                <label for="age">Age (Must be 18 or older):</label>
+                <input type="number" id="age" placeholder="Enter your age">
+                <div id="ageError" class="error">Age must be 18 or older</div>
+            </div>
+            
+            <!-- Submit button -->
+            <button type="submit">Submit Form</button>
+            
+            <!-- Success message -->
+            <div id="successMessage" class="success">
+                Great! All information is correct. Form submitted successfully!
+            </div>
+        </form>
+        
+        <!-- Explanation section -->
+        <div style="margin-top: 30px; padding: 20px; background-color: #f8f9fa; border-radius: 5px;">
+            <h3>How This Works:</h3>
+            <ul>
+                <li><strong>Name:</strong> Must not be empty</li>
+                <li><strong>Email:</strong> Must contain @ and a domain (like .com)</li>
+                <li><strong>Age:</strong> Must be a number 18 or higher</li>
+            </ul>
+            <p><em>Try submitting with empty fields or wrong information to see the validation in action!</em></p>
+        </div>
+    </div>
+
+    <script>
+        // STEP 1: Get references to all the form elements we need
+        const form = document.getElementById('myForm');
+        const nameInput = document.getElementById('name');
+        const emailInput = document.getElementById('email');
+        const ageInput = document.getElementById('age');
+        const nameError = document.getElementById('nameError');
+        const emailError = document.getElementById('emailError');
+        const ageError = document.getElementById('ageError');
+        const successMessage = document.getElementById('successMessage');
+        
+
+        // STEP 2: Create functions to show and hide error messages
+        function showError(input, errorElement) {
+            input.classList.add('input-error');           // Make border red
+            input.classList.remove('input-success');      // Remove green border
+            errorElement.style.display = 'block';         // Show error message
+        }
+        
+        function showSuccess(input, errorElement) {
+            input.classList.add('input-success');         // Make border green
+            input.classList.remove('input-error');        // Remove red border
+            errorElement.style.display = 'none';          // Hide error message
+        }
+        
+        // STEP 3: Create validation functions for each field
+        function validateName() {
+            const name = nameInput.value.trim();          // Get name and remove spaces
+            
+            if (name === '') {                             // Check if empty
+                showError(nameInput, nameError);
+                return false;                              // Validation failed
+            } else {
+                showSuccess(nameInput, nameError);
+                return true;                               // Validation passed
+            }
+        }
+        
+        function validateEmail() {
+            const email = emailInput.value.trim();        // Get email and remove spaces
+            
+            // Simple email check: must contain @ and a dot
+            if (email === '' || !email.includes('@') || !email.includes('.')) {
+                showError(emailInput, emailError);
+                return false;                              // Validation failed
+            } else {
+                showSuccess(emailInput, emailError);
+                return true;                               // Validation passed
+            }
+        }
+        
+        function validateAge() {
+            const age = parseInt(ageInput.value);          // Convert to number
+            
+            // Check if age is a valid number and 18 or older
+            if (isNaN(age) || age < 18) {
+                showError(ageInput, ageError);
+                return false;                              // Validation failed
+            } else {
+                showSuccess(ageInput, ageError);
+                return true;                               // Validation passed
+            }
+        }
+        
+        // STEP 4: Add event listener for form submission
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();                        // Stop form from submitting normally
+            
+            // Hide success message first
+            successMessage.style.display = 'none';
+            
+            // Validate all fields
+            const isNameValid = validateName();
+            const isEmailValid = validateEmail();
+            const isAgeValid = validateAge();
+            
+            // Check if ALL validations passed
+            if (isNameValid && isEmailValid && isAgeValid) {
+                // All good! Show success message
+                successMessage.style.display = 'block';
+                
+                // In a real website, you would send the data to a server here
+                console.log('Form data:', {
+                    name: nameInput.value,
+                    email: emailInput.value,
+                    age: ageInput.value
+                });
+            } else {
+                // Some validation failed, errors are already shown
+                console.log('Form has errors, please fix them');
+            }
+        });
+        
+    </script>
+</body>
+</html>

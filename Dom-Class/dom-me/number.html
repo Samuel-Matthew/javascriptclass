@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  </head>
+  <title>Number Validation</title>
+  <body>
+    <div class="flex flex-col gap-4 h-screen items-center justify-center">
+        <h2>JavaScript Validation</h2>
+
+    <p>Please input a number between 1 and 10:</p>
+
+    <input class="border border-gray-500 rounded-md p-2" id="number" />
+
+    <button class="bg-blue-500 text-white p-2 rounded-md" type="button" onclick="validateNumber()">Submit</button>
+
+    <p id="demo">You have not typed anything</p>
+
+    <script>
+      const validateNumber = () => {
+        const inputElement = document.getElementById("number");
+        const inputValue = inputElement.value;
+
+        const result = document.getElementById("demo");
+        if (isNaN(inputValue) || inputValue < 1 || inputValue > 10) {
+          result.innerHTML = "Input not valid";
+        } else {
+          result.innerHTML = "Input OK";
+        }
+        inputElement.value = "";
+      };
+    </script>
+    </div>
+      </body>
+</html>

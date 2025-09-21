@@ -1,0 +1,10 @@
+.toast{
+    background-color: grey;
+    color: green;
+    width: 300px;
+    font-size: 20px;
+    border-radius: 10px;
+    height: 50px;
+    margin: auto;
+    text-align: center;
+}

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Validation</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+</head>
+<body>
+    <div>
+        <form name="myForm" id="myForm" method="post" action="">
+            <div>
+                <label for="fname">Name:</label>
+                <input class="border mb-5" type="text" name="fname" id="fname" placeholder="Include your name">
+                <span id="nameError" style="color: red; display: none;">Please Enter a name</span>
+            </div>
+            <div>
+                <label for="fname">Email:</label>
+                <input class="border mb-5" type="text" name="email" id="email" placeholder="Enter your email">
+                <span id="nameError" style="color: red; display: none;">Please Enter an email</span>
+            </div>
+             <div>
+                <label for="age">Age:</label>
+                <input class="border mb-5" type="text" name="age" id="age" placeholder="Enter your age">
+                    <span id="nameError" style="color: red; display: none;">Please Your age(18+)</span>
+            </div>
+            <div style="margin-top: 10px;">
+                <button class="bg-blue-500 p-2 rounded-sm text-white" type="submit">Submit</button>
+            </div>
+           
+        </form> 
+        <div id="successMessage" style="color: green; display: none; margin-top: 10px;"></div>
+
+
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
