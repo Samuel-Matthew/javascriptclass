@@ -30,7 +30,7 @@ body{
 input {
   width: 220px;
   font-family: monospace;
-  padding: 5px;
+  padding:5px 15px;
   float: right;
   outline: none;
   background: rgba(255, 255, 255, 0.3);
@@ -39,9 +39,16 @@ input {
   font-size: 18px;
   border-radius: 10px;
   text-align: right;
+  -moz-appearance: text-field;
+}
+
+input::-webkit-inner-spin-button,
+input::-webkit-inner-spin-button{
+    -webkit-appearance: none;
 }
 
 
 input::placeholder{
     color: darkgray;
+    text-align: left;
 }
