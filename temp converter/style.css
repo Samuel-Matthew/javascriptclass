@@ -30,7 +30,7 @@ body{
 input {
   width: 220px;
   font-family: monospace;
-  padding:5px 15px;
+  padding:5px 10px;
   float: right;
   outline: none;
   background: rgba(255, 255, 255, 0.3);

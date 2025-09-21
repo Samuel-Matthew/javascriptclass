@@ -5,6 +5,7 @@ const kelvin = document.getElementById('kelvin');
 function convert(e){
     const inputValue = +e.target.value;
 
+
     switch (e.target.name) {
         case 'celsius':
             fahrenheit.value = (inputValue * 1.8 + 32).toFixed(2);
@@ -22,5 +23,11 @@ function convert(e){
 
         default:
             break;
+    }
+
+    if(e.target.value == ""){
+        fahrenheit.value = "";
+        celsius.value = "";
+        kelvin.value = "";
     }
 }
