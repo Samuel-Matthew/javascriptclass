@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+    <title>currency converter</title>
+</head>
+
+<body>
+
+    <div class="hero">
+        <div class="hero-content">
+            <h1>Currency converter</h1>
+            <p>check live rates and more</p>
+            <button id="revbtn">convert now</button>
+        </div>
+
+        <div class="up">
+            <div class="converter">
+                <div class="cur">
+                    <div class="drop">
+                        <label for="">convert</label><br>
+                        <div class="sel">
+                            <div id="fromflag">
+                                
+                            </div>
+                            <select id="fromCurrency" onchange="">
+                                <option value="">choose currency </option>
+                                <!-- Options will be added dynamically -->
+                            </select>
+                            <div class="amt">
+                                <input type="number">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="hr">
+                        <span class="material-symbols-outlined" id="icn">
+                            swap_vert
+                        </span>
+                    </div>
+
+                    <div class="drop">
+                        <label for="">convert</label><br>
+                        <div class="sel">
+                            <div id="toflag"></div>
+                            <select id="toCurrency" onchange="">
+                                <option value="">choose currency </option>
+                                <!-- Options will be added dynamically -->
+                            </select>
+                            <div class="amt">
+                                <input type="number">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script src="main.js"></script>
+</body>
+
+</html>
