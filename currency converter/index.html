@@ -27,12 +27,12 @@
                             <div id="fromflag">
                                 
                             </div>
-                            <select id="fromCurrency" onchange="">
+                            <select id="fromCurrency" onchange="showRates">
                                 <option value="">choose currency </option>
                                 <!-- Options will be added dynamically -->
                             </select>
                             <div class="amt">
-                                <input type="number">
+                                <input type="number" id="fromcur" oninput="convert('from')">
                             </div>
                         </div>
                     </div>
@@ -52,12 +52,14 @@
                                 <!-- Options will be added dynamically -->
                             </select>
                             <div class="amt">
-                                <input type="number">
+                                <input type="number" id="tocur" oninput="convert('to')">
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+
+            <p id="mrates"></p>
         </div>
 
         <script src="main.js"></script>
