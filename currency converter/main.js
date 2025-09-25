@@ -171,29 +171,32 @@ async function loadCurrencies() {
     fromSel.addEventListener("change", showRate);
     toSel.addEventListener("change", showRate);
 
+
+    //SWAP TOGGLE
+
     const swapBtn = document.getElementById("icn");
 
-swapBtn.addEventListener("click", () => {
-    const fromSel = document.getElementById("fromCurrency");
-    const toSel = document.getElementById("toCurrency");
-    const fromAmt = document.getElementById("fromcur");
-    const toAmt = document.getElementById("tocur");
+    swapBtn.addEventListener("click", () => {
+        const fromSel = document.getElementById("fromCurrency");
+        const toSel = document.getElementById("toCurrency");
+        const fromAmt = document.getElementById("fromcur");
+        const toAmt = document.getElementById("tocur");
 
-    // swap currencies
-    let tempCurrency = fromSel.value;
-    fromSel.value = toSel.value;
-    toSel.value = tempCurrency;
+        // swap currencies
+        let tempCurrency = fromSel.value;
+        fromSel.value = toSel.value;
+        toSel.value = tempCurrency;
 
-    // swap amounts
-    let tempAmount = fromAmt.value;
-    fromAmt.value = toAmt.value;
-    toAmt.value = tempAmount;
+        // swap amounts
+        let tempAmount = fromAmt.value;
+        fromAmt.value = toAmt.value;
+        toAmt.value = tempAmount;
 
-    // trigger updates (flags + rate display)
-    updateFlag(fromSel, document.getElementById("fromflag"));
-    updateFlag(toSel, document.getElementById("toflag"));
-    showRate(); // your function that updates rate text
-});
+        // trigger updates (flags + rate display)
+        updateFlag(fromSel, document.getElementById("fromflag"));
+        updateFlag(toSel, document.getElementById("toflag"));
+        showRate(); // your function that updates rate text
+    });
 
 }
 
