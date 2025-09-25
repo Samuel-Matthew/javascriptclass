@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
     <title>currency converter</title>
+    <!-- <link rel="stylesheet" href="mystyle.css"> -->
 </head>
 
 <body>
@@ -22,11 +23,9 @@
             <div class="converter">
                 <div class="cur">
                     <div class="drop">
-                        <label for="">convert</label><br>
+                        <label for="">CONVERT FROM</label><br>
                         <div class="sel">
-                            <div id="fromflag">
-                                
-                            </div>
+                            <div id="fromflag"></div>
                             <select id="fromCurrency" onchange="showRates">
                                 <option value="">choose currency </option>
                                 <!-- Options will be added dynamically -->
@@ -44,7 +43,7 @@
                     </div>
 
                     <div class="drop">
-                        <label for="">convert</label><br>
+                        <label for="">CONVERT TO</label><br>
                         <div class="sel">
                             <div id="toflag"></div>
                             <select id="toCurrency" onchange="">
