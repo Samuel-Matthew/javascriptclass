@@ -208,6 +208,7 @@ input {
     .hero.shrink {
         height: 35vh;
         padding: 30px;
+      
 
     }
 
@@ -264,11 +265,11 @@ height: 400px;
         right: 0;
         transform: translateY(100%);
         transition: transform .8s linear;
-        height: 82%;
+        height: 78%;
         /* border-top-left-radius: 20px; */
         /* border-top-right-radius: 20px; */
         /* background: radial-gradient(circle at center, #6a11cb, #2575fc); */
-
+/* background-color: red; */
 
         padding: 10px;
     }
