@@ -385,3 +385,69 @@ height: 400px;
 
    
 }
+
+/* iPhone 5 specific styles */
+@media screen and (max-width: 320px) {
+
+  body {
+    font-size: 14px;
+    padding: 0 5px;
+  }
+
+  .hero {
+    padding: 15px;
+    height: auto;
+  }
+
+  .hero-content h1 {
+    font-size: 1.5rem; /* smaller heading */
+  }
+
+  .hero-content p {
+    font-size: 0.85rem; /* smaller paragraph */
+  }
+
+  #revbtn {
+    width: 120px;
+    font-size: 0.85rem;
+    padding: 8px 15px;
+  }
+
+  .converter {
+    width: 100%;
+    padding: 15px;
+    margin-top: 1.2em;
+  }
+
+  .sel {
+    /* flex-direction: column; */
+    /* align-items: stretch; */
+    gap: 8px;
+  }
+
+  select {
+    height: 40px;
+    font-size: 0.9rem;
+  }
+
+  input[type="number"] {
+    width: 90%;
+    height: 45px;
+    font-size: 1rem;
+    text-align: center;
+  }
+
+  #icn {
+    font-size: 1.5rem;
+    padding: 8px;
+  }
+
+  #mrates {
+    font-size: 0.85rem;
+    padding: 8px;
+  }
+
+  #fromflag, #toflag {
+  height: 30px;
+}
+}
